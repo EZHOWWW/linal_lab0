@@ -33,6 +33,25 @@ class TestSquareMatrix(ut.TestCase):
         self.assertEqual(Matrix([[2, 4], [6, 8]]) *
                          Matrix([[1, 0], [0, 1]]), Matrix([[2, 4], [6, 8]]))
 
+    def test_get_minor(self):
+        a = SquareMatrix([[1, 2, 3],
+                          [4, 5, 6],
+                          [7, 8, 9]]).get_minor((0, 0))
+
+        self.assertEqual(
+            SquareMatrix([[1, 2, 3],
+                          [4, 5, 6],
+                          [7, 8, 9]]).get_minor((0, 0)),
+            SquareMatrix([[5, 6], [8, 9]])
+        )
+
+    def test_get_det(self):
+        self.assertEqual(
+            SquareMatrix([[1, 0, 0],
+                          [0, 1, 0],
+                         [0, 0, 1]]).det(), 1
+        )
+
 
 if __name__ == '__main__':
     ut.main()
