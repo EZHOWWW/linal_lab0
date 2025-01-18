@@ -33,7 +33,8 @@ class Matrix:
 
     def __add__(self, other):
         if self.size != other.size:
-            raise Exception()
+            raise ValueError('Matrix size mast be same')
+        for i in self.mtrx.keys()
         for i in range(self.size[0]):
             for j in range(self.size[1]):
                 if (i, j) in self.mtrx and (i, j) in other.mtrx:
@@ -55,7 +56,7 @@ class Matrix:
 
     def _mul_mat(self, mat):
         if self.size[1] != mat.size[0]:
-            raise Exception()
+            raise ValueError('matrixes sizes are not correct')
         res = Matrix(size=(self.size[0], self.size[1]))
         for i in range(res.size[0]):
             for j in range(res.size[1]):
